@@ -61,4 +61,12 @@ searchForm.addEventListener('submit', (event) => {
   sendRequest();
 });
 
-loadMoreButton.addEventListener('click', sendRequest);
+loadMoreButton.addEventListener('click', () => {
+  sendRequest();
+  setTimeout(() => {
+    window.scrollTo({
+      top: window.outerHeight +  window.pageYOffset,
+      behavior: 'smooth'
+    });
+  }, 1000) 
+});
